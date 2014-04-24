@@ -1,6 +1,6 @@
-package com.betterment.base;
+package com.samandmoore.base.web;
 
-import com.betterment.base.config.WebAppConfig;
+import com.samandmoore.base.web.config.WebAppConfig;
 import org.springframework.boot.SpringApplication;
 
 /**

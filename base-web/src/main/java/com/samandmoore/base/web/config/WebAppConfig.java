@@ -1,4 +1,4 @@
-package com.betterment.base.config;
+package com.samandmoore.base.web.config;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -16,7 +16,7 @@ import com.github.jknack.handlebars.springmvc.HandlebarsViewResolver;
  * @since 4/19/14 10:07 PM
  */
 @Configuration
-@ComponentScan("com.betterment")
+@ComponentScan("com.samandmoore")
 @EnableAutoConfiguration
 public class WebAppConfig extends WebMvcConfigurerAdapter {
 

@@ -1,4 +1,4 @@
-package com.betterment.base.config;
+package com.samandmoore.base.web.config;
 
 import org.springframework.context.annotation.Configuration;
 

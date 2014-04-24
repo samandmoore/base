@@ -1,0 +1,61 @@
+ext {
+    springBootVersion = "1.0.1.RELEASE"
+    debugPort = 5005
+}
+
+buildscript {
+    ext {
+        springBootVersion = "1.0.1.RELEASE"
+    }
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+apply plugin: "java"
+apply plugin: "eclipse"
+apply plugin: "idea"
+apply plugin: "spring-boot"
+
+repositories {
+    mavenCentral()
+}
+
+jar {
+    baseName = "base-web"
+}
+
+/* pass -Ddebug=true from the gradle CLI to attach debugger */
+run {
+    if (System.getProperty('debug', 'false') == 'true') {
+        jvmArgs "-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=${debugPort}"
+    }
+}
+
+dependencies {
+    compile project(':base-core')
+
+    compile("org.springframework.boot:spring-boot-starter-web:${springBootVersion}") {
+        exclude module: "spring-boot-starter-tomcat"
+    }
+    compile "org.springframework.boot:spring-boot-starter-jetty:${springBootVersion}"
+
+    compile "com.github.jknack:handlebars:1.2.1"
+    compile "com.github.jknack:handlebars-springmvc:1.2.1"
+
+    compile "com.google.guava:guava:16.0"
+
+    compile "joda-time:joda-time:2.3"
+
+    testCompile "junit:junit:4.11"
+    testCompile "org.springframework.boot:spring-boot-starter-test:${springBootVersion}"
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = "1.10"
+}

@@ -1,7 +1,14 @@
 .gradle
+build
+
+# intellij
 *.iws
 *.iml
 *.ipr
-build
 out
+
+# eclipse
+.project
+.classpath
+.settings
 build-eclipse
