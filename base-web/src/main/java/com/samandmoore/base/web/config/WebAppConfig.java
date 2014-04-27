@@ -9,7 +9,9 @@ import org.springframework.core.Ordered;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
+import com.github.jknack.handlebars.HumanizeHelper;
 import com.github.jknack.handlebars.springmvc.HandlebarsViewResolver;
+import com.samandmoore.base.web.handlebars.CustomHandlebarsView;
 
 /**
  * @author Sam Moore
@@ -26,8 +28,11 @@ public class WebAppConfig extends WebMvcConfigurerAdapter {
     @Bean
     public HandlebarsViewResolver viewResolver() {
 
-        final HandlebarsViewResolver resolver = new HandlebarsViewResolver().withoutMessageHelper();
+        final HandlebarsViewResolver resolver = new HandlebarsViewResolver()
+                .registerHelpers(HumanizeHelper.class)
+                .withoutMessageHelper();
 
+        resolver.setViewClass(CustomHandlebarsView.class);
         resolver.setPrefix("classpath:/views/");
         resolver.setSuffix(".html.hbs");
         resolver.setCache(cacheViews);
