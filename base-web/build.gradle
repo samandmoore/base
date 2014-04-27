@@ -1,11 +1,11 @@
 ext {
-    springBootVersion = "1.0.1.RELEASE"
+    springBootVersion = "1.0.2.RELEASE"
     debugPort = 5005
 }
 
 buildscript {
     ext {
-        springBootVersion = "1.0.1.RELEASE"
+        springBootVersion = "1.0.2.RELEASE"
     }
 
     repositories {

@@ -29,7 +29,7 @@ public class WebAppConfig extends WebMvcConfigurerAdapter {
         final HandlebarsViewResolver resolver = new HandlebarsViewResolver().withoutMessageHelper();
 
         resolver.setPrefix("classpath:/views/");
-        resolver.setSuffix(".hbs.html");
+        resolver.setSuffix(".html.hbs");
         resolver.setCache(cacheViews);
         resolver.setOrder(Ordered.HIGHEST_PRECEDENCE);
 
