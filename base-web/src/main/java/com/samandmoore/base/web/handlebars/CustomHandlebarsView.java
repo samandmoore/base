@@ -20,7 +20,7 @@ public class CustomHandlebarsView extends HandlebarsView {
     protected void renderMergedTemplateModel(final Map<String, Object> model, final HttpServletRequest request, final HttpServletResponse response)
             throws IOException {
 
-        model.put(VIEW_USER_KEY, "Sam");
+        //model.put(VIEW_USER_KEY, "Sam");
 
         super.renderMergedTemplateModel(model, request, response);
     }

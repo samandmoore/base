@@ -1,5 +1,6 @@
 {{#partial "body" }}
-<h1>Hi there, <strong>{{currentUser}}</strong>.</h1>
+{{csrf_token}}
+<h1>Hi there, <strong>{{current_user}}</strong>.</h1>
 {{/partial}}
 
 {{> layout}}
